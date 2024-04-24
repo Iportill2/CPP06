@@ -1,4 +1,6 @@
 #include "ScalarConverter.hpp"
+
+//0, nan,   42.0f
 int  main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -17,16 +19,20 @@ int  main(int argc, char **argv)
 	
 	return (0);
 }
-/* ./convert 0
+/* 
+
+./convert 0
 char: Non displayable
 int: 0
 float: 0.0f
 double: 0.0
+
 ./convert nan
 char: impossible
 int: impossible
 float: nanf
 double: nan
+
 ./convert 42.0f
 char: '*'
 int: 42
