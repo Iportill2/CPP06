@@ -76,9 +76,10 @@ void ScalarConverter::toChar(std::string input)
 	std::cout << "char: ";
 	try
 	{
-		if (input.length() == 1 && !std::isdigit(input[0]) && std::isprint(input[0]))
+		//std::isdigit(input[0]) == 0 y std::isdigit(input[0]) == false
+		if (input.length() == 1 && std::isdigit(input[0]) == false  && std::isprint(input[0])== true)
 			std::cout << "'" << static_cast<char>(input[0]) << "'" << std::endl;
-		else if (std::isprint(static_cast<char>(std::atoi(input.c_str()))))
+		else if (std::isprint(static_cast<char>(std::atoi(input.c_str()))) == true)
 			std::cout << "'" << static_cast<char>(std::atoi(input.c_str())) << "'" << std::endl;
 		else
 			std::cout << "Non displayable" << std::endl;
@@ -94,7 +95,7 @@ void	ScalarConverter::toInt(std::string input)
 	std::cout << "int: ";
 	try
 	{
-		std::cout << static_cast<int>(std::atoi(input.c_str())) << std::endl;
+		std::cout << static_cast<int>(std::atoi(input.c_str()) == true) << std::endl;
 	}
 	catch (std::exception &e)
 	{

@@ -17,10 +17,15 @@ Base * generate(void)
 		std::cout << "B" << std::endl;
 		return (new B);
 	}
-	else
+	else if(i == 2)
 	{
 		std::cout << "C" << std::endl;
 		return (new C);
+	}
+	else
+	{
+		std::cout << "D" << std::endl;
+		return (new D);
 	}
 }
 
